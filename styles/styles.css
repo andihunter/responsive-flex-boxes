@@ -1,0 +1,291 @@
+:root {
+    --daisy: #F2CF07;
+    --tangerine: #F28444;
+    --coralreef: #F26B5E;
+    --salmon: #F29385;
+    --robbinegg: #88D9D6;
+    --lighttext: #FFFFFF;
+    --darktext: #595959;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+header {
+    padding: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    align-self: center;
+    margin: 0 2rem;
+  }
+
+body .main main {
+  max-width: calc(60rem + 600px);
+}
+
+h1 {
+    font-family: 'MuseoModerno', cursive;
+    color: var(--coralreef);
+    font-size: 30pt;
+}
+
+h2 {
+    font-family: 'MuseoModerno', cursive;
+    color: var(--salmon);
+    font-size: 24pt;
+}
+
+h3 {
+    font-family: 'MuseoModerno', cursive;
+    color: var(--robbinegg);
+    font-size: 18pt;
+}
+
+h4 {
+    font-family: 'MuseoModerno', cursive;
+    color: var(--tangerine);
+    font-size: 16pt;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+    color: var(--darktext);
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+article {
+  margin-top: 7rem;
+}
+
+footer {
+    text-align: center;
+    color: var(--lighttext);
+    padding: 1rem;
+    background-color: var(--coralreef);
+    margin-top: 7rem;
+}
+footer h2, h3 {
+  color: var(--lighttext);
+}
+
+a {
+    color: var(--coralreef);
+    text-decoration: none;
+}
+
+
+/* Menu styling */
+
+nav {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: end;
+  gap: 50px;
+}
+
+nav > * {
+  flex: 1 1 auto;
+}
+
+nav img {
+  max-width: 60px;
+}
+
+nav a {
+  white-space: nowrap;
+}
+
+/* Button Styling */
+
+a:hover {
+    color: var(--darktext);
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    color: var(--robbinegg);
+    border: 2px solid var(--robbinegg);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 1rem;
+    transition: background-color 300ms, color 300ms;
+}
+  
+.button:hover {
+    color: var(--darktext);
+    background-color: var(--robbinegg);
+}
+
+/* Hero Image Styling */
+
+  .hero {
+    height: 60vh;
+    position: relative;
+    color: var(--lighttext);
+  }
+  
+  .hero .text-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .hero h1, .hero p {
+    margin: 0;
+    color: var(--lighttext);
+    text-shadow: 0px 0px 5px var(--coralreef);
+  }
+
+  .hero h1 {
+    font-size: 60px; 
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Card Styling */
+  
+  .cards {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .card {
+    position: relative;
+    /* max-width: 360px;
+    min-width: 120px; */
+  }
+  
+  .overlay, .text-overlay {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .text-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .text-overlay p {
+    position: absolute;
+    bottom: 100px;
+    left: 15px;
+    margin: 0;
+    font-family: 'MuseoModerno', cursive;
+    color: var(--lighttext);
+    font-size: 18pt;
+    text-shadow: 0px 0px 12px var(--robbinegg);
+  }
+  
+  .overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .card:hover .overlay, .text-overlay {
+    opacity: 1;
+  }
+  
+  /* Panel Styling */
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+  }
+
+  .panel .image-wrap {
+    order: -1;
+    flex: 0 1 40%;
+  }
+
+  .panel .text-wrap {
+    flex: 1 0 60%;
+  }
+
+  .panel img {
+    height: 100%;
+    object-position: cover;
+    max-height: 500px;
+  }
+
+  @media (min-width: 700px) {
+    .panel {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .panel h2 {
+      margin: 0;
+    }
+
+    .panel .left {
+      order: -2;
+    }
+
+    .cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .cards .card {
+      flex: 1 1 45%;
+    }
+  }
+
+@media (min-width: 900px) {
+  .cards {
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+
+}
